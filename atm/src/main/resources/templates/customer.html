@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{fragments/main_layout}"
+      xmlns:th="https://www.thymeleaf.org">
+
+<div layout:fragment="content">
+    <div class="jumbotron">
+        <h1 th:text="${titleRegister}" class="my-font title-shadow"></h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+
+                <form th:action="@{/customer}" method="POST">
+
+                    <div class="form-group">
+                        <label for="inputId" class="my-font">Id</label>
+                        <input type="input" name="id" id="inputId" class="form-control my-font" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputName" class="my-font">Name</label>
+                        <input type="input" name="name" id="inputName" class="form-control my-font" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPin" class="my-font">Pin</label>
+                        <input type="password" name="pin" id="inputPin" class="form-control my-font" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-success my-font">Submit</button>
+
+                </form>
+
+            </div>
+
+            <div class="col s6">
+
+                <h1 th:text="${title}" class="my-font title-shadow"></h1>
+
+
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="sizeThreeColumn my-font table-info">Id</th>
+                        <th scope="col" class="sizeThreeColumn my-font table-info">Name</th>
+                        <th scope="col" class="sizeThreeColumn my-font table-info">Pin</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="customer: ${allCustomers}">
+                        <td th:text="${customer.id}" class="my-font"></td>
+                        <td th:text="${customer.name}" class="my-font"></td>
+                        <td th:text="${customer.pin}" class="my-font"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+    </div>
+</div>
+

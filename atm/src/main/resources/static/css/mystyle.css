@@ -1,0 +1,25 @@
+.my-font{
+    font-family: 'Rammetto One', cursive;}
+body{
+    background-color: #ffecb3;
+}
+.sizeFourColumn{
+    width:20%
+}
+.sizeThreeColumn{
+    width:30%
+}
+.divTitle{
+    text-align:center;
+}
+.container-login{
+    width:50%
+}
+.title-shadow{
+  text-shadow: 4px 4px #00e5ff ;
+}
+in-jumbotron{
+    text-align: center;
+}
+
+

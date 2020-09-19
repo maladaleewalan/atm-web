@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{fragments/main_layout}"
+      xmlns:th="https://www.thymeleaf.org">
+
+    <div layout:fragment="content">
+        <div class="jumbotron">
+            <h1 th:text="${greeting}" class="my-font title-shadow"></h1>
+        </div>
+    </div>
