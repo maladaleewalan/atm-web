@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{fragments/main_layout}"
+      xmlns:th="https://www.thymeleaf.org">
+
+<div layout:fragment="content">
+
+    <div class="jumbotron">
+        <h1 th:text="${customertitle}" class="my-font title-shadow"></h1>
+    </div>
+
+    <div class="container">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th scope="col" class="sizeThreeColumn my-font table-info">Type</th>
+                <th scope="col" class="sizeThreeColumn my-font table-info">Balance</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="account : ${bankaccounts}">
+                <td th:text="${account.type}" class="my-font"></td>
+                <td th:text="${account.balance}" class="my-font"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
