@@ -56,7 +56,9 @@
                             <td th:text="${bankaccount.balance}" class="my-font"></td>
                             <td>
                                 <a class="btn btn-outline-info my-font" th:href="@{/bankaccount/edit/{id}(id=${bankaccount.id})}">Edit</a>
-                                <a class="btn btn-outline-dark my-font" th:href="@{/bankaccount/edit/{id}(id=${bankaccount.id})}">Delete</a>
+                                <form th:action="@{/bankaccount/delete/{id}(id=${bankaccount.id})}" method="POST">
+                                    <button type="submit" class="btn btn-outline-dark my-font">Delete</button>
+                                </form>
                             </td>
 
 
