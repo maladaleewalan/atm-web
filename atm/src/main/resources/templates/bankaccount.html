@@ -45,6 +45,7 @@
                             <th scope="col" class="sizeFourColumn my-font table-info">CustomerId</th>
                             <th scope="col" class="sizeFourColumn my-font table-info">Type</th>
                             <th scope="col" class="sizeFourColumn my-font table-info">Balance</th>
+                            <th scope="col" class="sizeFourColumn my-font table-info">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -53,6 +54,12 @@
                             <td th:text="${bankaccount.customerId}" class="my-font"></td>
                             <td th:text="${bankaccount.type}" class="my-font"></td>
                             <td th:text="${bankaccount.balance}" class="my-font"></td>
+                            <td>
+                                <a class="btn btn-outline-info my-font" th:href="@{/bankaccount/edit/{id}(id=${bankaccount.id})}">Edit</a>
+                                <a class="btn btn-outline-dark my-font" th:href="@{/bankaccount/edit/{id}(id=${bankaccount.id})}">Delete</a>
+                            </td>
+
+
                         </tr>
 
                         </tbody>
