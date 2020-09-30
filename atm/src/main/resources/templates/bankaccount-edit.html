@@ -6,7 +6,6 @@
 <div layout:fragment="content">
     <div class="jumbotron">
         <h1 class="my-font title-shadow">Edit Bank Account</h1>
-
     </div>
 
     <div class="container">
@@ -32,13 +31,57 @@
 
             <div class="form-group">
                 <label for="inputBalance" class="my-font">Balance</label>
-                <input type="text" th:field="*{balance}" class="form-control my-font" id="inputBalance">
-            </div>
-
-            <div class="form-group">
-                <button type="submit" class="btn btn-outline-warning my-font">Submit</button>
+                <input disabled type="text" th:field="*{balance}" class="form-control my-font" id="inputBalance">
             </div>
 
         </form>
+
+
+            <div>
+                <div class="row">
+                    <div class="col">
+                        <div class="jumbotron">
+                            <h1 class="my-font title-shadow">Deposit</h1>
+                        </div>
+                        <form th:action="@{/bankaccount/deposit/{id}(id=${bankAccount.id})}"
+                              th:object="${bankAccount}"
+                              method="POST">
+                            <div class="form-group">
+                                <label for="inputDeposit" class="my-font">Balance Deposit</label>
+                                <input type="text" name="balance" class="form-control my-font" id="inputDeposit" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-outline-secondary my-font">Deposit</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="col">
+                        <div class="jumbotron">
+                            <h1 class="my-font title-shadow">Withdraw</h1>
+                        </div>
+                        <form th:action="@{/bankaccount/withdraw/{id}(id=${bankAccount.id})}"
+                              th:object="${bankAccount}"
+                              method="POST">
+                            <div class="form-group">
+                                <label for="inputWithdraw" class="my-font">Balance Withdraw</label>
+                                <input type="text" name="balance" class="form-control my-font" id="inputWithdraw" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-outline-secondary my-font">Withdraw</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+<!--            <div class="form-group">-->
+<!--                <button type="submit" class="btn btn-outline-warning my-font">Submit</button>-->
+<!--            </div>-->
+
+        <a class="btn btn-outline-primary my-font" th:href="@{/bankaccount}"><< Bank Account</a>
+
+<!--        </form>-->
     </div>
 </div>

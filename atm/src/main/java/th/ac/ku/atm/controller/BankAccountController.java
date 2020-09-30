@@ -46,6 +46,28 @@ public class BankAccountController {
         return "redirect:/bankaccount";
     }
 
+    @PostMapping("/deposit/{id}")
+    public String depositAccount(@PathVariable int id,
+                              @ModelAttribute BankAccount bankAccount,
+                              Model model) {
+
+        bankAccountService.depositBankAccount(bankAccount);
+        model.addAttribute("bankaccounts",bankAccountService.getBankAccountList()); //getBankAccounts
+        return "redirect:/bankaccount";
+    }
+
+    @PostMapping("/withdraw/{id}")
+    public String withdrawAccount(@PathVariable int id,
+                                 @ModelAttribute BankAccount bankAccount,
+                                 Model model) {
+
+        bankAccountService.withdrawBankAccount(bankAccount);
+        model.addAttribute("bankaccounts",bankAccountService.getBankAccountList()); //getBankAccounts
+        return "redirect:/bankaccount";
+    }
+
+
+
     @PostMapping("/delete/{id}")
     public String deleteAccount(@PathVariable int id,
                               @ModelAttribute BankAccount bankAccount,
